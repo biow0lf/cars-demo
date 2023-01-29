@@ -13,6 +13,10 @@ AllCops:
 Style/StringLiterals:
   Enabled: false
 
+# Enabled and enforced by standard
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: true
   EnforcedStyle: always_true
@@ -36,3 +40,8 @@ Lint/EmptyBlock:
 # Disabled as in standard
 Metrics/BlockLength:
   Enabled: false
+
+Naming/FileName:
+  Enabled: true
+  Exclude:
+    - "spec/support/shoulda-matchers.rb"
