@@ -28,6 +28,7 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "bootsnap", require: false
 
 gem "pry-rails"
+gem "kaminari"
 
 group :development, :test do
   gem "rspec-rails", ">= 6.0.1"
