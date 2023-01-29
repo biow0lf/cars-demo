@@ -32,3 +32,7 @@ Style/SymbolArray:
 # Disabled as in standard
 Lint/EmptyBlock:
   Enabled: false
+
+# Disabled as in standard
+Metrics/BlockLength:
+  Enabled: false
