@@ -51,4 +51,5 @@ group :test do
   gem "simplecov", require: false
   gem "database_rewinder"
   gem "rails-controller-testing"
+  gem "shoulda-matchers"
 end
