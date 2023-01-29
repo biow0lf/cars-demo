@@ -53,4 +53,5 @@ group :test do
   gem "database_rewinder"
   gem "rails-controller-testing"
   gem "shoulda-matchers"
+  gem "capybara", ">= 3.26"
 end
