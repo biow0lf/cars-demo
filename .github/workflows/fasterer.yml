@@ -1,4 +1,4 @@
-name: standardrb
+name: fasterer
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
     - cron: "0 21 * * 6"
 
 jobs:
-  standardrb:
+  fasterer:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,4 +20,4 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - run: bin/standardrb
+      - run: bin/fasterer
