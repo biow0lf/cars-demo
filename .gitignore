@@ -31,3 +31,6 @@
 .idea/**
 spec/examples.txt
 coverage/**
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

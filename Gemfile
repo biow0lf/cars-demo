@@ -28,6 +28,8 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "bootsnap", require: false
 
 gem "pry-rails"
+gem "kaminari"
+gem "dartsass-rails"
 
 group :development, :test do
   gem "rspec-rails", ">= 6.0.1"
@@ -48,4 +50,6 @@ end
 group :test do
   gem "simplecov", require: false
   gem "database_rewinder"
+  gem "rails-controller-testing"
+  gem "shoulda-matchers"
 end
