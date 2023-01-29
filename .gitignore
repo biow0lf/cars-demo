@@ -29,3 +29,5 @@
 /config/master.key
 
 .idea/**
+spec/examples.txt
+coverage/**
