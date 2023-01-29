@@ -7,6 +7,5 @@
   * Importmaps
   * SASS via `dartsass-rails`
 * Bootstrap 5
-* `dartsass-rails` for SASS
 * `pry-rails` as irb replacement
 * `kaminari` as pagination
