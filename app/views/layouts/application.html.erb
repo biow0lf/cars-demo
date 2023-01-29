@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CarsDemo</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,7 +11,19 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-dark">
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <div class="w-100"></div>
+
+    <hr class="text-dark">
+
+    <div class="row text-center">
+      <div class="col text-muted">
+        &copy; 2023 <strong>Me</strong>
+      </div>
+    </div>
   </body>
 </html>

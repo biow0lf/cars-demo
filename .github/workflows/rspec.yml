@@ -23,9 +23,17 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+      - name: Setup setup-chromedriver
+        uses: nanasess/setup-chromedriver@v1.1.0
       - name: bootsnap precompile
         run: bundle exec bootsnap precompile --gemfile app/ lib/
       - run: bin/rails zeitwerk:check
       - run: bin/rails db:create
       - run: bin/rails db:migrate
-      - run: bin/rspec --force-color --profile --format documentation
+      - name: Run tests
+        run: |
+          chromedriver --version
+          export DISPLAY=:99
+          chromedriver --url-base=/wd/hub &
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+          bundle exec rspec --force-color --profile --format documentation

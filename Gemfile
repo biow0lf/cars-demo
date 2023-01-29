@@ -30,6 +30,7 @@ gem "bootsnap", require: false
 gem "pry-rails"
 gem "kaminari"
 gem "dartsass-rails"
+gem "bootstrap"
 
 group :development, :test do
   gem "rspec-rails", ">= 6.0.1"
@@ -52,4 +53,6 @@ group :test do
   gem "database_rewinder"
   gem "rails-controller-testing"
   gem "shoulda-matchers"
+  gem "capybara", ">= 3.26"
+  gem "selenium-webdriver"
 end
