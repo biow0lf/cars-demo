@@ -5,19 +5,10 @@ ruby File.read(".ruby-version")
 gem "rails", "7.0.4.2"
 gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
-gem "puma", "~> 5.0"
-
-# Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
-gem "jsbundling-rails"
-
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem "puma"
+gem "importmap-rails"
 gem "turbo-rails"
-
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
-
-# Bundle and process CSS [https://github.com/rails/cssbundling-rails]
-gem "cssbundling-rails"
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
@@ -33,9 +24,6 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
-
-# Use Sass to process CSS
-# gem "sassc-rails"
 
 group :development, :test do
 end
