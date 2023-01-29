@@ -7,5 +7,7 @@ FactoryBot.define do
     sequence :email do |n|
       "person#{n}@example.com"
     end
+
+    phone { Faker::PhoneNumber.cell_phone_in_e164 }
   end
 end
