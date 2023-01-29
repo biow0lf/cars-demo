@@ -28,6 +28,7 @@ gem "bootsnap", require: false
 group :development, :test do
   gem "rspec-rails", ">= 6.0.1"
   gem "factory_bot_rails"
+  gem "faker"
 end
 
 group :development do
