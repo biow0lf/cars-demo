@@ -54,4 +54,5 @@ group :test do
   gem "rails-controller-testing"
   gem "shoulda-matchers"
   gem "capybara", ">= 3.26"
+  gem "selenium-webdriver"
 end
