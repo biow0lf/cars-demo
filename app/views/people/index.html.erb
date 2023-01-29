@@ -1,1 +1,29 @@
-Hello World!
+<div class="row text-center">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+    <h1 class="text-primary">People</h1>
+
+    <%= link_to("New person", new_person_path, class: "btn btn-primary") %>
+
+    <table class="table table-bordered table-striped table-hover table-dark">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @people.each do |person| %>
+          <%= render person %>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="w-100"></div>
+
+    <%= paginate @people %>
+  </div>
+</div>
