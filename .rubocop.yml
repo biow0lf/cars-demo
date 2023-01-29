@@ -1,0 +1,30 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "bin/*"
+    - "db/schema.rb"
+    - "vendor/**/*"
+
+# Enabled and enforced by standard
+Style/StringLiterals:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  EnforcedStyle: always_true
+
+# Disabled as in standard
+Style/Documentation:
+  Enabled: false
+
+# Disabled as in standard
+Bundler/OrderedGems:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: true
+  EnforcedStyle: brackets
