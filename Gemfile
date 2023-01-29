@@ -29,6 +29,7 @@ gem "bootsnap", require: false
 
 gem "pry-rails"
 gem "kaminari"
+gem "dartsass-rails"
 
 group :development, :test do
   gem "rspec-rails", ">= 6.0.1"
