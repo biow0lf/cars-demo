@@ -13,6 +13,10 @@
 
   <body class="bg-dark">
     <div class="container">
+      <div id="alerts" data-turbo-cache="false">
+        <%= render "shared/alerts" %>
+      </div>
+
       <%= yield %>
     </div>
 
