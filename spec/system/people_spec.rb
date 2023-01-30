@@ -10,4 +10,12 @@ describe "People features" do
       visit people_path
     end
   end
+
+  describe "#destroy" do
+    it "should render" do
+      create_list(:person, 30)
+
+      visit people_path
+    end
+  end
 end
