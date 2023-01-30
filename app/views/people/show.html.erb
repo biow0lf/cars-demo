@@ -1,1 +1,26 @@
-Hello World!
+<div class="row text-center">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+    <h1 class="text-primary">Person: <%= @person.name %></h1>
+
+    <table class="table table-bordered table-striped table-hover table-dark">
+      <tbody>
+        <tr>
+          <td>Name:</td>
+          <td><%= @person.name %></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><%= @person.email %></td>
+        </tr>
+        <tr>
+          <td>Phone:</td>
+          <td><%= @person.phone %></td>
+        </tr>
+        <tr>
+          <td>Edit</td>
+          <td>Destroy</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
