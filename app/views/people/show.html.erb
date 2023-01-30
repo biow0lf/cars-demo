@@ -20,7 +20,15 @@
         </tr>
         <tr>
           <td>Edit</td>
-          <td>Destroy</td>
+          <td>
+            <%= link_to("Destroy",
+                        person_path(@person, format: :html),
+                        class: "btn btn-primary",
+                        data: {
+                          turbo_method: :delete,
+                          turbo_confirm: "Are you sure?"
+                        }) %>
+          </td>
         </tr>
       </tbody>
     </table>
