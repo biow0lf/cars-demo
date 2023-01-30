@@ -20,6 +20,36 @@ describe PeopleController do
     it { should render_template(:index) }
   end
 
+  describe "#show" do
+    before { expect(Person).to receive(:find).with("1") }
+
+    before { get :show, params: {id: "1"} }
+
+    it { should respond_with(:ok) }
+
+    it { should render_template(:show) }
+  end
+
+  describe "#new" do
+    before { expect(Person).to receive(:new) }
+
+    before { get :new }
+
+    it { should respond_with(:ok) }
+
+    it { should render_template(:new) }
+  end
+
+  describe "#edit" do
+    before { expect(Person).to receive(:find).with("1") }
+
+    before { get :edit, params: {id: "1"} }
+
+    it { should respond_with(:ok) }
+
+    it { should render_template(:edit) }
+  end
+
   describe "#destroy" do
     let(:person) { instance_double(Person) }
 
