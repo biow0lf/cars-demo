@@ -17,6 +17,10 @@ Style/StringLiterals:
 Layout/SpaceInsideHashLiteralBraces:
   Enabled: false
 
+# Enabled and enforced by standard
+Style/EmptyMethod:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: true
   EnforcedStyle: always_true
