@@ -4,5 +4,5 @@
   <td><%= person.phone %></td>
   <td>VIEW</td>
   <td>EDIT</td>
-  <td><%= link_to("Destroy", person_path(person), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}) %></td>
+  <td><%= link_to("Destroy", person_path(person), class: "btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}) %></td>
 </tr>
