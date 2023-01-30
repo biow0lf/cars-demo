@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  people:
+    destroy:
+      successful: "Person was successfully destroyed."
