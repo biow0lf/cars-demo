@@ -2,13 +2,13 @@
   <td><%= person.name %></td>
   <td><%= person.email %></td>
   <td><%= person.phone %></td>
-  <td>
+  <td class="text-center">
     <%= link_to("View", person_path(person), class: "btn btn-primary") %>
   </td>
-  <td>
+  <td class="text-center">
     <%= link_to("Edit", edit_person_path(person), class: "btn btn-primary") %>
   </td>
-  <td>
+  <td class="text-center">
     <%= link_to("Destroy",
                 person_path(person),
                 class: "btn btn-primary",
