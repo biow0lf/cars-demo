@@ -2,7 +2,7 @@
 
 class CarsController < ApplicationController
   def index
-    @cars = Car.page(params[:page])
+    @cars = Car.includes(:owner).page(params[:page])
   end
 
   def show
