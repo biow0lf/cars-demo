@@ -24,7 +24,9 @@
           <td><%= @person.phone %></td>
         </tr>
         <tr>
-          <td>Edit</td>
+          <td>
+            <%= link_to("Edit", edit_person_path(@person), class: "btn btn-primary") %>
+          </td>
           <td>
             <%= link_to("Destroy",
                         person_path(@person, format: :html),
