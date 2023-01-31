@@ -8,7 +8,7 @@ FactoryBot.define do
 
     # "Model S", "Model 3" -- Tesla
     # "Prius", "Camry" -- Toyota
-    model { ["Model S", "Model 3", "Prius", "Camry"] }
+    model { ["Model S", "Model 3", "Prius", "Camry"].sample }
 
     color { ["black", "white", "pink", "green"].sample }
 
