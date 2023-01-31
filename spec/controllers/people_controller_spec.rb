@@ -100,23 +100,30 @@ describe PeopleController do
     end
 
     context "when person not valid" do
-      # let(:person) { instance_double(Person) }
-      #
-      # before do
-      #   #
-      #   # Person.find(params[:id]) # => person
-      #   #
-      #   expect(Person).to receive(:find).with("1").and_return(person)
-      # end
-    end
+      let(:person) { instance_double(Person) }
 
-    # @person = Person.find(params[:id])
-    #
-    # if @person.update(person_params)
-    #   redirect_to person_path(@person), notice: t(".successful")
-    # else
-    #   render :edit, status: :unprocessable_entity
-    # end
+      before do
+        #
+        # Person.find(params[:id]) # => person
+        #
+        expect(Person).to receive(:find).with("1").and_return(person)
+      end
+
+      before do
+        #
+        # person.update(person_params)
+        #
+        expect(person).to receive(:update)
+          .with(ActionController::Parameters.new(name: "John", email: "john@example.com", phone: "+380631112233").permit!)
+          .and_return(false)
+      end
+
+      before { put :update, params: {id: "1", person: {name: "John", email: "john@example.com", phone: "+380631112233"}} }
+
+      it { should respond_with(:unprocessable_entity) }
+
+      it { should render_template(:edit) }
+    end
   end
 
   describe "#destroy" do
