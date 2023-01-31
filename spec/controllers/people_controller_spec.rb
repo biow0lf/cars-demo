@@ -50,6 +50,29 @@ describe PeopleController do
     it { should render_template(:edit) }
   end
 
+  describe "#create" do
+    # def create
+    #   @person = Person.new(person_params)
+    #
+    #   if @person.save
+    #     redirect_to person_path(@person), notice: t(".successful")
+    #   else
+    #     render :new, status: :unprocessable_entity
+    #   end
+    # end
+  end
+
+  describe "#update" do
+    # @person = Person.find(params[:id])
+    #
+    # if @person.update(person_params)
+    #   redirect_to person_path(@person), notice: t(".successful")
+    # else
+    #   render :edit, status: :unprocessable_entity
+    # end
+
+  end
+
   describe "#destroy" do
     let(:person) { instance_double(Person) }
 
@@ -82,4 +105,30 @@ describe PeopleController do
       it { should set_flash[:notice].to("Person was successfully destroyed.") }
     end
   end
+
+  # private methods
+
+  describe "#person_params" do
+    before do
+      #
+      # params.require(:person).permit(:name, :email, :phone)
+      #
+      expect(subject).to receive(:params) do
+        double.tap do |a|
+          expect(a).to receive(:require).with(:person) do
+            double.tap do |b|
+              expect(b).to receive(:permit).with(:name, :email, :phone)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.send(:person_params) }.not_to raise_error }
+  end
+
+  # def person_params
+  #   params.require(:person).permit(:name, :email, :phone)
+  # end
+
 end
