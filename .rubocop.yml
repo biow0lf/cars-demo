@@ -41,6 +41,10 @@ Style/SymbolArray:
   Enabled: true
   EnforcedStyle: brackets
 
+Style/WordArray:
+  Enabled: true
+  EnforcedStyle: brackets
+
 # Disabled as in standard
 Lint/EmptyBlock:
   Enabled: false
