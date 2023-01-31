@@ -1,1 +1,15 @@
-Hello World!
+<%= form_with(model: car) do |f| %>
+  <div class="mb-3">
+    <%= f.label :make, "Car make", class: "form-label" %>
+    <%= f.text_field :make, class: "form-control", placeholder: "Car make e.g. Tesla or Toyota", required: true, autofocus: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :model, "Car model", class: "form-label" %>
+    <%= f.text_field :model, class: "form-control", placeholder: "Car model e.g. Model S or Model 3", required: true %>
+  </div>
+
+  <div class="text-center">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
