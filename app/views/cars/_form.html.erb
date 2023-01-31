@@ -1,23 +1,30 @@
 <%= form_with(model: car) do |f| %>
   <div class="mb-3">
-    <%= f.label :make, "Car make", class: "form-label" %>
+    <%= f.label :make, "Car make", class: "form-label text-primary" %>
     <%= f.text_field :make, class: "form-control", placeholder: "Car make e.g. Tesla or Toyota", required: true, autofocus: true %>
   </div>
 
   <div class="mb-3">
-    <%= f.label :model, "Car model", class: "form-label" %>
+    <%= f.label :model, "Car model", class: "form-label text-primary" %>
     <%= f.text_field :model, class: "form-control", placeholder: "Car model e.g. Model S or Model 3", required: true %>
   </div>
 
   <div class="mb-3">
-    <%= f.label :color, "Car color", class: "form-label" %>
+    <%= f.label :color, "Car color", class: "form-label text-primary" %>
     <%= f.text_field :color, class: "form-control", placeholder: "Car color e.g. black or white", required: true %>
   </div>
 
   <div class="mb-3">
-    <%= f.label :mileage, "Car mileage", class: "form-label" %>
+    <%= f.label :mileage, "Car mileage", class: "form-label text-primary" %>
     <%= f.number_field :mileage, class: "form-control", placeholder: "Car mileage e.g. 10000", required: true %>
   </div>
+
+  <div class="mb-3">
+    <%= f.label :for_sale, "Car for sale?", class: "form-check-label text-primary" %>
+    <%= f.check_box :for_sale, class: "form-check-input" %>
+  </div>
+
+  <!-- TODO: owner -->
 
   <div class="text-center">
     <%= f.submit class: "btn btn-primary" %>
