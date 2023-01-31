@@ -50,41 +50,41 @@ describe CarsController do
     it { should render_template(:edit) }
   end
 
-  # describe "#create" do
-  #   let(:person) { instance_double(Person, to_param: "1") }
-  #
-  #   before do
-  #     #
-  #     # Person.new(person_params) # => person
-  #     #
-  #     expect(Person).to receive(:new)
-  #                         .with(ActionController::Parameters.new(name: "John", email: "john@example.com", phone: "+380631112233").permit!)
-  #                         .and_return(person)
-  #   end
-  #
-  #   context "when person valid" do
-  #     before { expect(person).to receive(:save).and_return(true) }
-  #
-  #     before { post :create, params: {person: {name: "John", email: "john@example.com", phone: "+380631112233"}} }
-  #
-  #     it { should respond_with(:found) }
-  #
-  #     it { should redirect_to(person_path(person)) }
-  #
-  #     it { should set_flash[:notice].to("Person was successfully created.") }
-  #   end
-  #
-  #   context "when person not valid" do
-  #     before { expect(person).to receive(:save).and_return(false) }
-  #
-  #     before { post :create, params: {person: {name: "John", email: "john@example.com", phone: "+380631112233"}} }
-  #
-  #     it { should respond_with(:unprocessable_entity) }
-  #
-  #     it { should render_template(:new) }
-  #   end
-  # end
-  #
+  describe "#create" do
+    let(:car) { instance_double(Car, to_param: "1") }
+
+    before do
+      #
+      # Car.new(car_params) # => car
+      #
+      expect(Car).to receive(:new)
+        .with(ActionController::Parameters.new(model: "Model", make: "Make", color: "pink", mileage: "999", for_sale: "1").permit!)
+        .and_return(car)
+    end
+
+    context "when car valid" do
+      before { expect(car).to receive(:save).and_return(true) }
+
+      before { post :create, params: {car: {model: "Model", make: "Make", color: "pink", mileage: "999", for_sale: "1"}} }
+
+      it { should respond_with(:found) }
+
+      it { should redirect_to(car_path(car)) }
+
+      it { should set_flash[:notice].to("Car was successfully created.") }
+    end
+
+    context "when car not valid" do
+      before { expect(car).to receive(:save).and_return(false) }
+
+      before { post :create, params: {car: {model: "Model", make: "Make", color: "pink", mileage: "999", for_sale: "1"}} }
+
+      it { should respond_with(:unprocessable_entity) }
+
+      it { should render_template(:new) }
+    end
+  end
+
   # describe "#update" do
   #   context "when person valid" do
   #     let(:person) { instance_double(Person, to_param: "1") }

@@ -17,16 +17,16 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
   end
 
-  # def create
-  #   @car = Car.new(car_params)
-  #
-  #   if @car.save
-  #     redirect_to car_path(@car), notice: t(".successful")
-  #   else
-  #     render :new, status: :unprocessable_entity
-  #   end
-  # end
-  #
+  def create
+    @car = Car.new(car_params)
+
+    if @car.save
+      redirect_to car_path(@car), notice: t(".successful")
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   # def update
   #   @car = Car.find(params[:id])
   #
