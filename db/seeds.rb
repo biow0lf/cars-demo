@@ -17,3 +17,11 @@ bar = ProgressBar.new(1_000)
 
   bar.increment!
 end
+
+bar = ProgressBar.new(1_000)
+
+1_000.times do
+  FactoryBot.create(:car)
+
+  bar.increment!
+end
