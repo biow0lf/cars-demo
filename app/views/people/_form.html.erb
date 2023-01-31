@@ -1,16 +1,16 @@
 <%= form_with(model: person) do |f| %>
   <div class="mb-3">
-    <%= f.label :name, "Person name", class: "form-label" %>
+    <%= f.label :name, "Person name", class: "form-label text-primary" %>
     <%= f.text_field :name, class: "form-control", placeholder: "Person name e.g. John Snow", required: true, autofocus: true, autocomplete: "name" %>
   </div>
 
   <div class="mb-3">
-    <%= f.label :email, "Person email address", class: "form-label" %>
+    <%= f.label :email, "Person email address", class: "form-label text-primary" %>
     <%= f.email_field :email, class: "form-control", placeholder: "Person email address e.g. john@example.com", required: true, autocomplete: "email" %>
   </div>
 
   <div class="mb-3">
-    <%= f.label :phone, "Person phone number", class: "form-label" %>
+    <%= f.label :phone, "Person phone number", class: "form-label text-primary" %>
     <%= f.telephone_field :phone, class: "form-control", placeholder: "Person phone number e.g. +380631112233", required: true, autocomplete: "tel" %>
   </div>
 
