@@ -1,7 +1,7 @@
 <tr id="<%= dom_id(person) %>">
   <td><%= person.name %></td>
   <td><%= person.email %></td>
-  <td><%= person.phone %></td>
+  <td><%= number_to_phone(person.phone) %></td>
   <td class="text-center">
     <%= link_to("View", person_path(person), class: "btn btn-primary") %>
   </td>
