@@ -45,6 +45,10 @@ Lint/EmptyBlock:
 Metrics/BlockLength:
   Enabled: false
 
+# Disabled as in standard
+Layout/LineLength:
+  Enabled: false
+
 Naming/FileName:
   Enabled: true
   Exclude:

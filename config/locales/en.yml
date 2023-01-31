@@ -32,5 +32,9 @@
 en:
   hello: "Hello world"
   people:
+    create:
+      successful: "Person was successfully created."
+    update:
+      successful: "Person was successfully updated."
     destroy:
       successful: "Person was successfully destroyed."

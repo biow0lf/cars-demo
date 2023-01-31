@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+    <div class="row">
+      <div class="col-6">
+        <h1 class="text-primary m-auto">Person: <%= @person.name %></h1>
+      </div>
+      <div class="col-6 text-end m-auto">
+        <%= link_to("Back to people", people_path, class: "btn btn-primary") %>
+      </div>
+    </div>
+
+    <table class="table table-bordered table-striped table-hover table-dark">
+      <tbody>
+        <tr>
+          <td>Name:</td>
+          <td><%= @person.name %></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><%= @person.email %></td>
+        </tr>
+        <tr>
+          <td>Phone:</td>
+          <td><%= @person.phone %></td>
+        </tr>
+        <tr>
+          <td>
+            <%= link_to("Edit", edit_person_path(@person), class: "btn btn-primary") %>
+          </td>
+          <td>
+            <%= link_to("Destroy",
+                        person_path(@person, format: :html),
+                        class: "btn btn-primary",
+                        data: {
+                          turbo_method: :delete,
+                          turbo_confirm: "Are you sure?"
+                        }) %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
