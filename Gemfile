@@ -31,6 +31,7 @@ gem "pry-rails"
 gem "kaminari"
 gem "dartsass-rails"
 gem "bootstrap"
+gem "progress_bar", require: false
 
 group :development, :test do
   gem "rspec-rails", ">= 6.0.1"
