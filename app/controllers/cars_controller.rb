@@ -36,16 +36,16 @@ class CarsController < ApplicationController
   #     render :edit, status: :unprocessable_entity
   #   end
   # end
-  #
-  # def destroy
-  #   @car = Car.find(params[:id])
-  #   @car.destroy!
-  #
-  #   respond_to do |format|
-  #     format.turbo_stream { flash.now[:notice] = t(".successful") }
-  #     format.html { redirect_to cars_path, status: :see_other, notice: t(".successful") }
-  #   end
-  # end
+
+  def destroy
+    @car = Car.find(params[:id])
+    @car.destroy!
+
+    respond_to do |format|
+      format.turbo_stream { flash.now[:notice] = t(".successful") }
+      format.html { redirect_to cars_path, status: :see_other, notice: t(".successful") }
+    end
+  end
 
   private
 
