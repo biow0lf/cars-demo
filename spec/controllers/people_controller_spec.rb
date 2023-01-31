@@ -51,6 +51,14 @@ describe PeopleController do
   end
 
   describe "#create" do
+    context "when person valid" do
+
+    end
+
+    context "when person not valid" do
+
+    end
+
     # def create
     #   @person = Person.new(person_params)
     #
@@ -63,6 +71,45 @@ describe PeopleController do
   end
 
   describe "#update" do
+    context "when person valid" do
+      let(:person) { instance_double(Person, to_param: "1") }
+
+      before do
+        #
+        # Person.find(params[:id]) # => person
+        #
+        expect(Person).to receive(:find).with("1").and_return(person)
+      end
+
+      before do
+        #
+        # person.update(person_params)
+        #
+        expect(person).to receive(:update)
+          .with(ActionController::Parameters.new(name: "John", email: "john@example.com", phone: "+380631112233").permit!)
+          .and_return(true)
+      end
+
+      before { put :update, params: {id: "1", person: {name: "John", email: "john@example.com", phone: "+380631112233"}} }
+
+      it { should respond_with(:found) }
+
+      it { should redirect_to(person_path(person)) }
+
+      it { should set_flash[:notice].to("Person was successfully updated.") }
+    end
+
+    context "when person not valid" do
+      # let(:person) { instance_double(Person) }
+      #
+      # before do
+      #   #
+      #   # Person.find(params[:id]) # => person
+      #   #
+      #   expect(Person).to receive(:find).with("1").and_return(person)
+      # end
+    end
+
     # @person = Person.find(params[:id])
     #
     # if @person.update(person_params)
@@ -70,7 +117,6 @@ describe PeopleController do
     # else
     #   render :edit, status: :unprocessable_entity
     # end
-
   end
 
   describe "#destroy" do
@@ -126,9 +172,4 @@ describe PeopleController do
 
     specify { expect { subject.send(:person_params) }.not_to raise_error }
   end
-
-  # def person_params
-  #   params.require(:person).permit(:name, :email, :phone)
-  # end
-
 end
