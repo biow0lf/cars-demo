@@ -4,7 +4,7 @@
   <td><%= car.color %></td>
   <td><%= car.mileage %> miles</td>
   <td>Owner</td>
-  <td><%= car.for_sale %></td>
+  <td><%= yes_or_no(car.for_sale) %></td>
   <td class="text-center">
     <%= link_to("View", car_path(car), class: "btn btn-primary") %>
   </td>
