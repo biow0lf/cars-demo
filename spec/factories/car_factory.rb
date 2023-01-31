@@ -4,8 +4,11 @@ FactoryBot.define do
   factory :car do
     owner factory: :person
 
-    # model
-    # make
+    make { ["Tesla", "Toyota"].sample }
+
+    # "Model S", "Model 3" -- Tesla
+    # "Prius", "Camry" -- Toyota
+    model { ["Model S", "Model 3", "Prius", "Camry"] }
 
     color { ["black", "white", "pink", "green"].sample }
 
