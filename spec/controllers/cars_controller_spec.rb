@@ -85,61 +85,61 @@ describe CarsController do
     end
   end
 
-  # describe "#update" do
-  #   context "when person valid" do
-  #     let(:person) { instance_double(Person, to_param: "1") }
-  #
-  #     before do
-  #       #
-  #       # Person.find(params[:id]) # => person
-  #       #
-  #       expect(Person).to receive(:find).with("1").and_return(person)
-  #     end
-  #
-  #     before do
-  #       #
-  #       # person.update(person_params)
-  #       #
-  #       expect(person).to receive(:update)
-  #                           .with(ActionController::Parameters.new(name: "John", email: "john@example.com", phone: "+380631112233").permit!)
-  #                           .and_return(true)
-  #     end
-  #
-  #     before { put :update, params: {id: "1", person: {name: "John", email: "john@example.com", phone: "+380631112233"}} }
-  #
-  #     it { should respond_with(:found) }
-  #
-  #     it { should redirect_to(person_path(person)) }
-  #
-  #     it { should set_flash[:notice].to("Person was successfully updated.") }
-  #   end
-  #
-  #   context "when person not valid" do
-  #     let(:person) { instance_double(Person) }
-  #
-  #     before do
-  #       #
-  #       # Person.find(params[:id]) # => person
-  #       #
-  #       expect(Person).to receive(:find).with("1").and_return(person)
-  #     end
-  #
-  #     before do
-  #       #
-  #       # person.update(person_params)
-  #       #
-  #       expect(person).to receive(:update)
-  #                           .with(ActionController::Parameters.new(name: "John", email: "john@example.com", phone: "+380631112233").permit!)
-  #                           .and_return(false)
-  #     end
-  #
-  #     before { put :update, params: {id: "1", person: {name: "John", email: "john@example.com", phone: "+380631112233"}} }
-  #
-  #     it { should respond_with(:unprocessable_entity) }
-  #
-  #     it { should render_template(:edit) }
-  #   end
-  # end
+  describe "#update" do
+    context "when person valid" do
+      let(:car) { instance_double(Car, to_param: "1") }
+
+      before do
+        #
+        # Car.find(params[:id]) # => car
+        #
+        expect(Car).to receive(:find).with("1").and_return(car)
+      end
+
+      before do
+        #
+        # car.update(car_params)
+        #
+        expect(car).to receive(:update)
+          .with(ActionController::Parameters.new(model: "Model", make: "Make", color: "pink", mileage: "999", for_sale: "1").permit!)
+          .and_return(true)
+      end
+
+      before { put :update, params: {id: "1", car: {model: "Model", make: "Make", color: "pink", mileage: "999", for_sale: "1"}} }
+
+      it { should respond_with(:found) }
+
+      it { should redirect_to(car_path(car)) }
+
+      it { should set_flash[:notice].to("Car was successfully updated.") }
+    end
+
+    context "when person not valid" do
+      let(:car) { instance_double(Car) }
+
+      before do
+        #
+        # Car.find(params[:id]) # => car
+        #
+        expect(Car).to receive(:find).with("1").and_return(car)
+      end
+
+      before do
+        #
+        # car.update(car_params)
+        #
+        expect(car).to receive(:update)
+          .with(ActionController::Parameters.new(model: "Model", make: "Make", color: "pink", mileage: "999", for_sale: "1").permit!)
+          .and_return(false)
+      end
+
+      before { put :update, params: {id: "1", car: {model: "Model", make: "Make", color: "pink", mileage: "999", for_sale: "1"}} }
+
+      it { should respond_with(:unprocessable_entity) }
+
+      it { should render_template(:edit) }
+    end
+  end
 
   describe "#destroy" do
     let(:car) { instance_double(Car) }
