@@ -21,6 +21,10 @@ Layout/SpaceInsideHashLiteralBraces:
 Style/EmptyMethod:
   Enabled: false
 
+# Enabled and enforced by standard
+Layout/ArgumentAlignment:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: true
   EnforcedStyle: always_true
