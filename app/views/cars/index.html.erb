@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+    <div class="row">
+      <div class="col-6">
+        <h1 class="text-primary m-auto">Cars</h1>
+      </div>
+      <div class="col-6 text-end m-auto">
+        <%= link_to("New car", new_car_path, class: "btn btn-primary") %>
+      </div>
+    </div>
+
+    <table id="cars" class="table table-bordered table-striped table-hover table-dark">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Make</th>
+          <th>Color</th>
+          <th>Mileage</th>
+          <th>Owner</th>
+          <th>Is for sale?</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cars.each do |car| %>
+          <%= render car %>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="w-100"></div>
+
+    <%= paginate @cars %>
+  </div>
+</div>

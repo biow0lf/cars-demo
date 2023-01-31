@@ -8,4 +8,20 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-1_000_000.times { FactoryBot.create(:person) }
+require "progress_bar"
+
+bar = ProgressBar.new(1_000)
+
+1_000.times do
+  FactoryBot.create(:person)
+
+  bar.increment!
+end
+
+bar = ProgressBar.new(1_000)
+
+1_000.times do
+  FactoryBot.create(:car)
+
+  bar.increment!
+end

@@ -2,34 +2,52 @@
   <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
     <div class="row">
       <div class="col-6">
-        <h1 class="text-primary m-auto">Person: <%= @person.name %></h1>
+        <h1 class="text-primary m-auto">Car: <%= @car.id %></h1>
       </div>
       <div class="col-6 text-end m-auto">
-        <%= link_to("Back to people", people_path, class: "btn btn-primary") %>
+        <%= link_to("Back to cars", cars_path, class: "btn btn-primary") %>
       </div>
     </div>
 
     <table class="table table-bordered table-striped table-hover table-dark">
       <tbody>
         <tr>
-          <td>Name:</td>
-          <td><%= @person.name %></td>
+          <td>Model:</td>
+          <td><%= @car.model %></td>
         </tr>
+
         <tr>
-          <td>Email:</td>
-          <td><%= @person.email %></td>
+          <td>Make:</td>
+          <td><%= @car.make %></td>
         </tr>
+
         <tr>
-          <td>Phone:</td>
-          <td><%= @person.phone %></td>
+          <td>Color:</td>
+          <td><%= @car.color %></td>
         </tr>
+
+        <tr>
+          <td>Mileage:</td>
+          <td><%= @car.mileage %></td>
+        </tr>
+
+        <tr>
+          <td>Owner:</td>
+          <td>Owner</td>
+        </tr>
+
+        <tr>
+          <td>Is for sale?:</td>
+          <td><%= @car.for_sale %></td>
+        </tr>
+
         <tr>
           <td>
-            <%= link_to("Edit", edit_person_path(@person), class: "btn btn-primary") %>
+            <%= link_to("Edit", edit_car_path(@car), class: "btn btn-primary") %>
           </td>
           <td>
             <%= link_to("Destroy",
-                        person_path(@person, format: :html),
+                        car_path(@car, format: :html),
                         class: "btn btn-danger",
                         data: {
                           turbo_method: :delete,
