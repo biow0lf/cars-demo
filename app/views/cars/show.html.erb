@@ -33,7 +33,7 @@
 
         <tr>
           <td>Owner:</td>
-          <td>Owner</td>
+          <td><%= link_to(@car.owner.name, person_path(@car.owner)) %></td>
         </tr>
 
         <tr>
