@@ -12,7 +12,7 @@ FactoryBot.define do
 
     color { ["black", "white", "pink", "green"].sample }
 
-    # mileage
+    mileage { [1_000, 10_000, 20_000, 50_000, 100_000].sample }
 
     for_sale { [true, false].sample }
   end
