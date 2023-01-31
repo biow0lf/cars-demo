@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_29_160855) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_31_194426) do
+  create_table "cars", force: :cascade do |t|
+    t.string "model"
+    t.string "make"
+    t.string "color"
+    t.bigint "mileage"
+    t.integer "person_id"
+    t.boolean "for_sale"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_cars_on_person_id"
+  end
+
   create_table "people", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -19,4 +31,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_29_160855) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "cars", "people"
 end
