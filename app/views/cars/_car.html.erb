@@ -6,15 +6,15 @@
   <td>Owner</td>
   <td><%= car.for_sale %></td>
   <td class="text-center">
-    <%#= link_to("View", person_path(person), class: "btn btn-primary") %>
+    <%= link_to("View", car_path(car), class: "btn btn-primary") %>
   </td>
   <td class="text-center">
-    <%#= link_to("Edit", edit_person_path(person), class: "btn btn-primary") %>
+    <%= link_to("Edit", edit_car_path(car), class: "btn btn-primary") %>
   </td>
   <td class="text-center">
-    <%#= link_to("Destroy",
-                person_path(person),
-                class: "btn btn-primary",
+    <%= link_to("Destroy",
+                car_path(car),
+                class: "btn btn-danger",
                 data: {
                   turbo_method: :delete,
                   turbo_confirm: "Are you sure?"
