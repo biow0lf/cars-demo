@@ -2,10 +2,14 @@
 
 FactoryBot.define do
   factory :car do
-    # owner factory: :person
-    # owner { association :person }
+    owner factory: :person
 
-    # model, make, color, mileage, owner
+    # model
+    # make
+
+    color { ["black", "white", "pink", "green"].sample }
+
+    # mileage
 
     for_sale { [true, false].sample }
   end
