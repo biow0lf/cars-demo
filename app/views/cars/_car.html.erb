@@ -1,1 +1,23 @@
-Car
+<tr id="<%= dom_id(car) %>">
+  <td><%= car.model %></td>
+  <td><%= car.make %></td>
+  <td><%= car.color %></td>
+  <td><%= car.mileage %></td>
+  <td>Owner</td>
+  <td><%= car.for_sale %></td>
+  <td class="text-center">
+    <%#= link_to("View", person_path(person), class: "btn btn-primary") %>
+  </td>
+  <td class="text-center">
+    <%#= link_to("Edit", edit_person_path(person), class: "btn btn-primary") %>
+  </td>
+  <td class="text-center">
+    <%#= link_to("Destroy",
+                person_path(person),
+                class: "btn btn-primary",
+                data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                }) %>
+  </td>
+</tr>
