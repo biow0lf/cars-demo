@@ -2,6 +2,6 @@
 
 module ApplicationHelper
   def yes_or_no(value)
-    value == true ? "Yes" : "No"
+    (value == true) ? "Yes" : "No"
   end
 end
