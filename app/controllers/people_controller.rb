@@ -28,7 +28,7 @@ class PeopleController < ApplicationController
   end
 
   def update
-    @person = Person.new(person_params)
+    @person = Person.find(params[:id])
 
     if @person.update(person_params)
       redirect_to person_path(@person), notice: t(".successful")
