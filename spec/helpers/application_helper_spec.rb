@@ -13,7 +13,7 @@ describe ApplicationHelper do
     end
 
     context "when nil" do
-      specify { expect(helper.yes_or_no(false)).to eq("No") }
+      specify { expect(helper.yes_or_no(nil)).to eq("No") }
     end
   end
 end
