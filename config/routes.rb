@@ -5,9 +5,9 @@ Rails.application.routes.draw do
     resources :person_car_ownerships_history, only: :index
   end
 
-  resources :cars
-
-  resources :car_history, only: :show
+  resources :cars do
+    resources :car_ownerships_history, only: :index
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
