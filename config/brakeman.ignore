@@ -1,0 +1,98 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Unscoped Find",
+      "warning_code": 82,
+      "fingerprint": "7e79245378c5a97393acb8962073f403997da36cfdd61345b9bf403f6e9f49ec",
+      "check_name": "UnscopedFind",
+      "message": "Unscoped call to `Car#find`",
+      "file": "app/controllers/cars_controller.rb",
+      "line": 31,
+      "link": "https://brakemanscanner.org/docs/warning_types/unscoped_find/",
+      "code": "Car.find(params[:id])",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "CarsController",
+        "method": "update"
+      },
+      "user_input": "params[:id]",
+      "confidence": "Weak",
+      "cwe_id": [
+        285
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "Unscoped Find",
+      "warning_code": 82,
+      "fingerprint": "c52684bdccea960dbd7363a9dc78dfc48d32c6fbc191268cf62d65a7bd8e3308",
+      "check_name": "UnscopedFind",
+      "message": "Unscoped call to `Car#find`",
+      "file": "app/controllers/cars_controller.rb",
+      "line": 17,
+      "link": "https://brakemanscanner.org/docs/warning_types/unscoped_find/",
+      "code": "Car.find(params[:id])",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "CarsController",
+        "method": "edit"
+      },
+      "user_input": "params[:id]",
+      "confidence": "Weak",
+      "cwe_id": [
+        285
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "Unscoped Find",
+      "warning_code": 82,
+      "fingerprint": "e54773856b952f140ceaa3e95a7395bc9bdacc3f0f549a96f7c7d35f1f73247d",
+      "check_name": "UnscopedFind",
+      "message": "Unscoped call to `Car#find`",
+      "file": "app/controllers/cars_controller.rb",
+      "line": 9,
+      "link": "https://brakemanscanner.org/docs/warning_types/unscoped_find/",
+      "code": "Car.find(params[:id])",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "CarsController",
+        "method": "show"
+      },
+      "user_input": "params[:id]",
+      "confidence": "Weak",
+      "cwe_id": [
+        285
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "Unscoped Find",
+      "warning_code": 82,
+      "fingerprint": "f1c2e2264a8374993e2ef351feaaf67a3836a65de70c4dee73d64377092431b2",
+      "check_name": "UnscopedFind",
+      "message": "Unscoped call to `Car#find`",
+      "file": "app/controllers/cars_controller.rb",
+      "line": 41,
+      "link": "https://brakemanscanner.org/docs/warning_types/unscoped_find/",
+      "code": "Car.find(params[:id])",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "CarsController",
+        "method": "destroy"
+      },
+      "user_input": "params[:id]",
+      "confidence": "Weak",
+      "cwe_id": [
+        285
+      ],
+      "note": ""
+    }
+  ],
+  "updated": "2023-02-02 11:48:43 +0100",
+  "brakeman_version": "5.4.0"
+}
