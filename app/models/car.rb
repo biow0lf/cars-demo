@@ -5,4 +5,6 @@ class Car < ApplicationRecord
     class_name: "Person",
     foreign_key: "person_id",
     inverse_of: :cars
+
+  has_many :ownerships, dependent: :destroy
 end
