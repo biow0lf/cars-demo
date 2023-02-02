@@ -2,6 +2,6 @@
 
 class CarOwnershipsHistoryController < ApplicationController
   def index
-    @car = Car.find(params[:car_id])
+    @car = Car.includes(ownerships: :person).find(params[:car_id])
   end
 end
