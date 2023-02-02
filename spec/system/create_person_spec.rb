@@ -27,21 +27,23 @@ describe "Create person features" do
     expect(Person.first.phone).to eq("+380631112233")
   end
 
-  # it "should show errors" do
-  #   create(:person, email: "john@example.com")
-  #
-  #   expect(Person.count).to eq(1)
-  #
-  #   visit new_person_path
-  #
-  #   fill_in "Person name", with: "John Snow"
-  #
-  #   fill_in "Person email address", with: "john@example.com"
-  #
-  #   fill_in "Person phone number", with: "+380631112233"
-  #
-  #   click_button "Create Person"
-  #
-  #   expect(Person.count).to eq(1)
-  # end
+  it "should show errors" do
+    create(:person, email: "john@example.com")
+
+    expect(Person.count).to eq(1)
+
+    visit new_person_path
+
+    fill_in "Person name", with: "John Snow"
+
+    fill_in "Person email address", with: "john@example.com"
+
+    fill_in "Person phone number", with: "+380631112233"
+
+    click_button "Create Person"
+
+    page.assert_text "Email has already been taken"
+
+    expect(Person.count).to eq(1)
+  end
 end
