@@ -40,4 +40,14 @@
       </tbody>
     </table>
   </div>
+
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+    <%= turbo_frame_tag dom_id(@person, :ownerships),
+                        src: person_person_car_ownerships_history_index_path(@person),
+                        target: "_top" do %>
+      <h2 class="text-primary">Person car ownership history</h2>
+
+      <div class="text-primary">Loading...</div>
+    <% end %>
+  </div>
 </div>

@@ -29,6 +29,10 @@ Layout/ArgumentAlignment:
 Style/TernaryParentheses:
   Enabled: false
 
+# Enabled and enforced by standard
+Style/HashSyntax:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: true
   EnforcedStyle: always_true
