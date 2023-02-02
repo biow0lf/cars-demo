@@ -2,6 +2,6 @@
 
 class PersonCarHistoryController < ApplicationController
   def show
-    @person = Person.find(params[:id])
+    @person = Person.includes(ownerships: :car).find(params[:id])
   end
 end
