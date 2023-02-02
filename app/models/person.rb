@@ -8,4 +8,6 @@ class Person < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true
   validates :phone, presence: true
+  validates :email, format: /\A[^@\s]+@[^@\s]+\z/
+  validates :email, uniqueness: {case_sensitive: false}
 end
