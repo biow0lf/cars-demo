@@ -14,6 +14,8 @@ describe "People features" do
   describe "#show" do
     it "should render" do
       person = create(:person)
+      car = create(:car, owner: person)
+      create(:ownership, car: car, person: person)
 
       visit person_path(person)
 
