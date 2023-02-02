@@ -1,2 +1,20 @@
 <%= turbo_frame_tag dom_id(@person, :history) do %>
+  <h2 class="text-primary">Person car ownership history</h2>
+
+  <table class="table table-bordered table-striped table-hover table-dark">
+    <thead>
+      <tr>
+        <th>Make</th>
+        <th>Model</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @person.ownerships.each do |ownership| %>
+        <tr>
+          <td><%= ownership.car.make %></td>
+          <td><%= ownership.car.model %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% end %>
