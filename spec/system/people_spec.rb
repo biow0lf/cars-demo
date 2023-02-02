@@ -24,4 +24,12 @@ describe "People features" do
       visit new_person_path
     end
   end
+
+  describe "#edit" do
+    it "should render" do
+      person = create(:person)
+
+      visit edit_person_path(person)
+    end
+  end
 end
