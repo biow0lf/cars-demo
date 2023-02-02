@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_01_191049) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_02_192757) do
   create_table "cars", force: :cascade do |t|
     t.string "model"
     t.string "make"
@@ -41,6 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_191049) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index "lower(email)", name: "index_people_on_lower_email", unique: true
   end
 
   add_foreign_key "cars", "people"
