@@ -25,6 +25,10 @@ Style/EmptyMethod:
 Layout/ArgumentAlignment:
   Enabled: false
 
+# Enabled and enforced by standard
+Style/TernaryParentheses:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: true
   EnforcedStyle: always_true

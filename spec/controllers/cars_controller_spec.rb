@@ -8,9 +8,13 @@ describe CarsController do
   describe "#index" do
     before do
       #
-      # Car.page(params[:page])
+      # Car.includes(:owner).page(params[:page])
       #
-      expect(Car).to receive(:page).with("1")
+      expect(Car).to receive(:includes).with(:owner) do
+        double.tap do |a|
+          expect(a).to receive(:page).with("1")
+        end
+      end
     end
 
     before { get :index, params: {page: "1"} }

@@ -33,12 +33,12 @@
 
         <tr>
           <td>Owner:</td>
-          <td>Owner</td>
+          <td><%= link_to(@car.owner.name, person_path(@car.owner)) %></td>
         </tr>
 
         <tr>
           <td>Is for sale?:</td>
-          <td><%= @car.for_sale %></td>
+          <td><%= yes_or_no(@car.for_sale) %></td>
         </tr>
 
         <tr>

@@ -13,15 +13,9 @@ require "progress_bar"
 bar = ProgressBar.new(1_000)
 
 1_000.times do
-  FactoryBot.create(:person)
+  person = FactoryBot.create(:person)
 
-  bar.increment!
-end
-
-bar = ProgressBar.new(1_000)
-
-1_000.times do
-  FactoryBot.create(:car)
+  100.times { FactoryBot.create(:car, owner: person) }
 
   bar.increment!
 end
