@@ -2,34 +2,34 @@
 
 require "rails_helper"
 
-describe "People features" do
+describe "Cars features" do
   describe "#index" do
     it "should render" do
-      create_list(:person, 10)
+      create_list(:car, 10)
 
-      visit people_path
+      visit cars_path
     end
   end
 
   describe "#show" do
     it "should render" do
-      person = create(:person)
+      car = create(:car)
 
-      visit person_path(person)
+      visit car_path(car)
     end
   end
 
   describe "#new" do
     it "should render" do
-      visit new_person_path
+      visit new_car_path
     end
   end
 
   describe "#edit" do
     it "should render" do
-      person = create(:person)
+      car = create(:car)
 
-      visit edit_person_path(person)
+      visit edit_car_path(car)
     end
   end
 end

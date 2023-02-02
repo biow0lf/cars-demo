@@ -160,7 +160,7 @@ describe PeopleController do
 
       it { should render_template(:destroy) }
 
-      it { should set_flash.now[:notice].to("Person was successfully destroyed.") }
+      it { should set_flash.now[:alert].to("Person was successfully destroyed.") }
     end
 
     context "when format html" do
@@ -170,7 +170,7 @@ describe PeopleController do
 
       it { should redirect_to(people_path) }
 
-      it { should set_flash[:notice].to("Person was successfully destroyed.") }
+      it { should set_flash[:alert].to("Person was successfully destroyed.") }
     end
   end
 

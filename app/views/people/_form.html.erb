@@ -1,4 +1,17 @@
 <%= form_with(model: person) do |f| %>
+  <% if person.errors.any? %>
+    <div class="alert alert-danger">
+      <h4 class="alert-heading">
+        <%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:
+      </h4>
+      <ul class="mb-0">
+        <% person.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="mb-3">
     <%= f.label :name, "Person name", class: "form-label text-primary" %>
     <%= f.text_field :name, class: "form-control", placeholder: "Person name e.g. John Snow", required: true, autofocus: true, autocomplete: "name" %>

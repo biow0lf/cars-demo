@@ -42,8 +42,8 @@ class PeopleController < ApplicationController
     @person.destroy!
 
     respond_to do |format|
-      format.turbo_stream { flash.now[:notice] = t(".successful") }
-      format.html { redirect_to people_path, status: :see_other, notice: t(".successful") }
+      format.turbo_stream { flash.now[:alert] = t(".successful") }
+      format.html { redirect_to people_path, status: :see_other, alert: t(".successful") }
     end
   end
 
