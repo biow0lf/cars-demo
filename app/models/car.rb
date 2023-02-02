@@ -7,4 +7,9 @@ class Car < ApplicationRecord
     inverse_of: :cars
 
   has_many :ownerships, dependent: :destroy
+
+  validates :make, presence: true
+  validates :model, presence: true
+  validates :color, presence: true
+  validates :mileage, presence: true
 end
