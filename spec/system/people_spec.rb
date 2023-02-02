@@ -16,6 +16,8 @@ describe "People features" do
       person = create(:person)
 
       visit person_path(person)
+
+      find("#ownerships")
     end
   end
 
