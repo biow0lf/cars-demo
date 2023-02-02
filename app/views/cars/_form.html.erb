@@ -1,4 +1,17 @@
 <%= form_with(model: car) do |f| %>
+  <% if car.errors.any? %>
+    <div class="alert alert-danger">
+      <h4 class="alert-heading">
+        <%= pluralize(car.errors.count, "error") %> prohibited this person from being saved:
+      </h4>
+      <ul class="mb-0">
+        <% car.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="mb-3">
     <%= f.label :make, "Car make", class: "form-label text-primary" %>
     <%= f.text_field :make, class: "form-control", placeholder: "Car make e.g. Tesla or Toyota", required: true, autofocus: true %>
