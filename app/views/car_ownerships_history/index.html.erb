@@ -15,7 +15,7 @@
     <tbody>
       <% @car.ownerships.each do |ownership| %>
         <tr>
-          <td><%= ownership.person.name %></td>
+          <td><%= link_to(ownership.person.name, person_path(ownership.person)) %></td>
           <td><%= ownership.person.email %></td>
           <td><%= number_to_phone(ownership.person.phone) %></td>
           <td><%= ownership.date_of_sale %></td>
