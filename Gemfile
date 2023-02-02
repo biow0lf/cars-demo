@@ -42,6 +42,7 @@ group :development, :test do
   gem "rubocop-rails", require: false
   gem "standard", "1.22.1", require: false
   gem "fasterer", require: false
+  gem "brakeman", require: false
 end
 
 group :development do
