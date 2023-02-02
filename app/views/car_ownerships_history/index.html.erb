@@ -17,7 +17,7 @@
         <tr>
           <td><%= ownership.person.name %></td>
           <td><%= ownership.person.email %></td>
-          <td><%= ownership.person.phone %></td>
+          <td><%= number_to_phone(ownership.person.phone) %></td>
           <td><%= ownership.date_of_sale %></td>
           <td><%= ownership.price %></td>
           <td><%= ownership.mileage %></td>
