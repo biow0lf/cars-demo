@@ -2,5 +2,6 @@
 
 class CarOwnershipsHistoryController < ApplicationController
   def index
+    @car = Car.find(params[:car_id])
   end
 end

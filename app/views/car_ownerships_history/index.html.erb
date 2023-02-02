@@ -1,1 +1,28 @@
-Hello World!
+<%= turbo_frame_tag dom_id(@car, :ownerships) do %>
+  <h2 class="text-primary">Car ownership history</h2>
+
+  <table class="table table-bordered table-striped table-hover table-dark">
+    <thead>
+      <tr>
+        <th>Owner name</th>
+        <th>Owner email</th>
+        <th>Owner phone</th>
+        <th>Date of sale</th>
+        <th>Price</th>
+        <th>Mileage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @car.ownerships.each do |ownership| %>
+        <tr>
+          <td><%= ownership.person.name %></td>
+          <td><%= ownership.person.email %></td>
+          <td><%= ownership.person.phone %></td>
+          <td><%= ownership.date_of_sale %></td>
+          <td><%= ownership.price %></td>
+          <td><%= ownership.mileage %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

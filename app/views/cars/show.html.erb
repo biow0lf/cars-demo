@@ -60,8 +60,12 @@
   </div>
 
   <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-    <h2 class="text-primary">Car ownership history</h2>
+    <%= turbo_frame_tag dom_id(@car, :ownerships),
+                        src: car_car_ownerships_history_index_path(@car),
+                        target: "_top" do %>
+      <h2 class="text-primary">Car ownership history</h2>
 
-    <div class="text-primary">Loading...</div>
+      <div class="text-primary">Loading...</div>
+    <% end %>
   </div>
 </div>
