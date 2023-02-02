@@ -5,17 +5,23 @@ require "rails_helper"
 describe "People features" do
   describe "#index" do
     it "should render" do
-      create_list(:person, 30)
+      create_list(:person, 60)
 
       visit people_path
     end
   end
 
-  describe "#destroy" do
+  describe "#show" do
     it "should render" do
-      create_list(:person, 30)
+      person = create(:person)
 
-      visit people_path
+      visit person_path(person)
+    end
+  end
+
+  describe "#new" do
+    it "should render" do
+      visit new_person_path
     end
   end
 end
