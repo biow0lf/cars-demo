@@ -2,7 +2,8 @@
 
 require "rails_helper"
 
-describe "Sale car features" do
+describe "Sell car features" do
   it "should change car owner" do
+
   end
 end
