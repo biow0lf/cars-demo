@@ -1,0 +1,16 @@
+version: "3.9"
+
+volumes:
+  postgresql_data: {}
+
+services:
+  postgresql:
+    image: "docker.io/library/postgres:15.1"
+    container_name: "cars_postgresql"
+    restart: "unless-stopped"
+    volumes:
+      - "postgresql_data:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+    ports:
+      - "5432:5432"
