@@ -16,6 +16,8 @@ describe "Cars features" do
       car = create(:car)
 
       visit car_path(car)
+
+      find("#ownerships")
     end
   end
 

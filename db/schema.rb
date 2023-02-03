@@ -11,12 +11,15 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_02_02_192757) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cars", force: :cascade do |t|
     t.string "model"
     t.string "make"
     t.string "color"
     t.bigint "mileage"
-    t.integer "person_id"
+    t.bigint "person_id"
     t.boolean "for_sale"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,8 +27,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_192757) do
   end
 
   create_table "ownerships", force: :cascade do |t|
-    t.integer "car_id", null: false
-    t.integer "person_id", null: false
+    t.bigint "car_id", null: false
+    t.bigint "person_id", null: false
     t.date "date_of_sale"
     t.integer "price"
     t.integer "mileage"
@@ -41,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_192757) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index "lower(email)", name: "index_people_on_lower_email", unique: true
+    t.index "lower((email)::text)", name: "index_people_on_lower_email", unique: true
   end
 
   add_foreign_key "cars", "people"
