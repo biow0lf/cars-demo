@@ -44,6 +44,7 @@ jobs:
       - name: bootsnap precompile
         run: bundle exec bootsnap precompile --gemfile app/ lib/
       - run: bin/rails zeitwerk:check
+      - run: cp -f config/database.yml.ci config/database.yml
       - run: bin/rails db:create
       - run: bin/rails db:migrate
       - name: Run tests
