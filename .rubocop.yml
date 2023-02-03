@@ -65,6 +65,10 @@ Metrics/BlockLength:
 Layout/LineLength:
   Enabled: false
 
+Naming/VariableNumber:
+  Enabled: true
+  EnforcedStyle: snake_case
+
 Naming/FileName:
   Enabled: true
   Exclude:
