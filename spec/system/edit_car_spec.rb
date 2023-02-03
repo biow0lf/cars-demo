@@ -8,12 +8,12 @@ describe "Update car features" do
     person_2 = create(:person, name: "John Snow")
 
     car = create(:car,
-                 make: "Tesla",
-                 model: "Model 3",
-                 color: "black",
-                 mileage: 10_000,
-                 owner: person_1,
-                 for_sale: false)
+      make: "Tesla",
+      model: "Model 3",
+      color: "black",
+      mileage: 10_000,
+      owner: person_1,
+      for_sale: false)
 
     expect(Car.count).to eq(1)
 
