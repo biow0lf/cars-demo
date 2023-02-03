@@ -39,7 +39,7 @@
 
   <div class="mb-3">
     <%= f.label :owner, "Car owner", class: "form-label text-primary" %>
-    <%= f.select :owner_id, people, {selected: car.person_id}, {class: "form-select"} %>
+    <%= f.select :owner_id, people, {selected: car.person_id, include_blank: true}, {class: "form-select"} %>
   </div>
 
   <div class="text-center">
