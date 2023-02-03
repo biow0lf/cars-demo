@@ -32,6 +32,7 @@ class CarsController < ApplicationController
 
   def update
     @car = Car.find(params[:id])
+    @people = Person.pluck(:name, :id)
 
     if @car.update(car_params)
       redirect_to car_path(@car), notice: t(".successful")

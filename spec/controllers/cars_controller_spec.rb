@@ -61,8 +61,6 @@ describe CarsController do
   describe "#create" do
     let(:car) { instance_double(Car, to_param: "1") }
 
-    before { expect(Person).to receive(:pluck).with(:name, :id) }
-
     before do
       #
       # Car.new(car_params) # => car
@@ -71,6 +69,8 @@ describe CarsController do
         .with(ActionController::Parameters.new(model: "Model", make: "Make", color: "pink", mileage: "999", for_sale: "1").permit!)
         .and_return(car)
     end
+
+    before { expect(Person).to receive(:pluck).with(:name, :id) }
 
     context "when car valid" do
       before { expect(car).to receive(:save).and_return(true) }
@@ -105,6 +105,8 @@ describe CarsController do
         #
         expect(Car).to receive(:find).with("1").and_return(car)
       end
+
+      before { expect(Person).to receive(:pluck).with(:name, :id) }
 
       before do
         #
