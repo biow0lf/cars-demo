@@ -61,6 +61,8 @@ describe CarsController do
   describe "#create" do
     let(:car) { instance_double(Car, to_param: "1") }
 
+    before { expect(Person).to receive(:pluck).with(:name, :id) }
+
     before do
       #
       # Car.new(car_params) # => car
