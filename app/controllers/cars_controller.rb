@@ -16,6 +16,7 @@ class CarsController < ApplicationController
 
   def edit
     @car = Car.find(params[:id])
+    @people = Person.pluck(:name, :id)
   end
 
   def create

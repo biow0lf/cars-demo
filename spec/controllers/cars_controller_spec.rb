@@ -49,6 +49,8 @@ describe CarsController do
   describe "#edit" do
     before { expect(Car).to receive(:find).with("1") }
 
+    before { expect(Person).to receive(:pluck).with(:name, :id) }
+
     before { get :edit, params: {id: "1"} }
 
     it { should respond_with(:ok) }
