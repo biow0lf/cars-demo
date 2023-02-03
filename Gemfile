@@ -6,7 +6,7 @@ ruby File.read(".ruby-version")
 
 gem "rails", "7.0.4.2"
 gem "sprockets-rails"
-gem "sqlite3", "~> 1.4"
+gem "pg"
 gem "puma"
 gem "importmap-rails"
 gem "turbo-rails"
