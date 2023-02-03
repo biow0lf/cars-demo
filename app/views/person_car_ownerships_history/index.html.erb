@@ -4,6 +4,7 @@
   <table id="ownerships" class="table table-bordered table-striped table-hover table-dark">
     <thead>
       <tr>
+        <td>ID</td>
         <th>Make</th>
         <th>Model</th>
         <th>Date of sale</th>
@@ -14,6 +15,7 @@
     <tbody>
       <% @person.ownerships.each do |ownership| %>
         <tr>
+          <td><%= link_to(ownership.car.id, car_path(ownership.car)) %></td>
           <td><%= ownership.car.make %></td>
           <td><%= ownership.car.model %></td>
           <td><%= ownership.date_of_sale %></td>
