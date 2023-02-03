@@ -11,14 +11,17 @@ class CarsController < ApplicationController
 
   def new
     @car = Car.new
+    @people = Person.pluck(:name, :id)
   end
 
   def edit
     @car = Car.find(params[:id])
+    @people = Person.pluck(:name, :id)
   end
 
   def create
     @car = Car.new(car_params)
+    @people = Person.pluck(:name, :id)
 
     if @car.save
       redirect_to car_path(@car), notice: t(".successful")

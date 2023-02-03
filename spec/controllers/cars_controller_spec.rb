@@ -37,6 +37,8 @@ describe CarsController do
   describe "#new" do
     before { expect(Car).to receive(:new) }
 
+    before { expect(Person).to receive(:pluck).with(:name, :id) }
+
     before { get :new }
 
     it { should respond_with(:ok) }
@@ -47,6 +49,8 @@ describe CarsController do
   describe "#edit" do
     before { expect(Car).to receive(:find).with("1") }
 
+    before { expect(Person).to receive(:pluck).with(:name, :id) }
+
     before { get :edit, params: {id: "1"} }
 
     it { should respond_with(:ok) }
@@ -56,6 +60,8 @@ describe CarsController do
 
   describe "#create" do
     let(:car) { instance_double(Car, to_param: "1") }
+
+    before { expect(Person).to receive(:pluck).with(:name, :id) }
 
     before do
       #

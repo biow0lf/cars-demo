@@ -37,7 +37,10 @@
     <%= f.check_box :for_sale, class: "form-check-input" %>
   </div>
 
-  <!-- TODO: owner -->
+  <div class="mb-3">
+    <%= f.label :owner, "Car owner", class: "form-label text-primary" %>
+    <%= f.select :owner_id, people, {selected: car.person_id}, {class: "form-select"} %>
+  </div>
 
   <div class="text-center">
     <%= f.submit class: "btn btn-primary" %>
