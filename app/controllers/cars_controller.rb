@@ -32,6 +32,7 @@ class CarsController < ApplicationController
 
   def update
     @car = Car.find(params[:id])
+    @people = Person.pluck(:name, :id)
 
     if @car.update(car_params)
       redirect_to car_path(@car), notice: t(".successful")
@@ -53,7 +54,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    # TODO: person_id
-    params.require(:car).permit(:model, :make, :color, :mileage, :for_sale)
+    params.require(:car).permit(:model, :make, :color, :mileage, :for_sale, :person_id)
   end
 end
