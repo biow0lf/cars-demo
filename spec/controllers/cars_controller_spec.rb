@@ -191,13 +191,13 @@ describe CarsController do
   describe "#car_params" do
     before do
       #
-      # params.require(:car).permit(:model, :make, :color, :mileage, :for_sale)
+      # params.require(:car).permit(:model, :make, :color, :mileage, :for_sale, :person_id)
       #
       expect(subject).to receive(:params) do
         double.tap do |a|
           expect(a).to receive(:require).with(:car) do
             double.tap do |b|
-              expect(b).to receive(:permit).with(:model, :make, :color, :mileage, :for_sale)
+              expect(b).to receive(:permit).with(:model, :make, :color, :mileage, :for_sale, :person_id)
             end
           end
         end
