@@ -11,6 +11,7 @@ class CarsController < ApplicationController
 
   def new
     @car = Car.new
+    @people = Person.pluck(:name, :id)
   end
 
   def edit

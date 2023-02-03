@@ -37,6 +37,8 @@ describe CarsController do
   describe "#new" do
     before { expect(Car).to receive(:new) }
 
+    before { expect(Person).to receive(:pluck).with(:name, :id) }
+
     before { get :new }
 
     it { should respond_with(:ok) }
