@@ -6,7 +6,7 @@ describe "Sell car features" do
   it "should change car owner" do
     car = create(:car)
 
-    visit car_sell_path(car)
+    visit new_car_sell_path(car)
 
     # TODO: check sell button
   end
