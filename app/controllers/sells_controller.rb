@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class SellsController < ApplicationController
-  def show
+  def new
     @car = Car.find(params[:car_id])
     @people = Person.pluck(:name, :id)
   end

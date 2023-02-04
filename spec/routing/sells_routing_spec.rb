@@ -4,10 +4,10 @@ require "rails_helper"
 
 describe SellsController do
   describe "routing" do
-    it "should route GET /cars/:car_id/sell to sells#show" do
-      expect(get: "/cars/1/sell").to route_to(
+    it "should route GET /cars/:car_id/sell/new to sells#new" do
+      expect(get: "/cars/1/sell/new").to route_to(
         controller: "sells",
-        action: "show",
+        action: "new",
         car_id: "1"
       )
     end
