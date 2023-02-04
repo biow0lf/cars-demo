@@ -49,29 +49,6 @@
     {
       "warning_type": "Unscoped Find",
       "warning_code": 82,
-      "fingerprint": "d966f22fb61c80aa8af6277c16f2fac7045021c01dc5da2883ef334a1dbf500b",
-      "check_name": "UnscopedFind",
-      "message": "Unscoped call to `Car#find`",
-      "file": "app/controllers/sells_controller.rb",
-      "line": 5,
-      "link": "https://brakemanscanner.org/docs/warning_types/unscoped_find/",
-      "code": "Car.find(params[:car_id])",
-      "render_path": null,
-      "location": {
-        "type": "method",
-        "class": "SellsController",
-        "method": "show"
-      },
-      "user_input": "params[:car_id]",
-      "confidence": "Weak",
-      "cwe_id": [
-        285
-      ],
-      "note": ""
-    },
-    {
-      "warning_type": "Unscoped Find",
-      "warning_code": 82,
       "fingerprint": "e54773856b952f140ceaa3e95a7395bc9bdacc3f0f549a96f7c7d35f1f73247d",
       "check_name": "UnscopedFind",
       "message": "Unscoped call to `Car#find`",
@@ -86,6 +63,29 @@
         "method": "show"
       },
       "user_input": "params[:id]",
+      "confidence": "Weak",
+      "cwe_id": [
+        285
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "Unscoped Find",
+      "warning_code": 82,
+      "fingerprint": "e6d4074b6e1bf0ae35f4f14e7bc88415e66bcad237e6bb910f1e29e809b1dd09",
+      "check_name": "UnscopedFind",
+      "message": "Unscoped call to `Car#find`",
+      "file": "app/controllers/sells_controller.rb",
+      "line": 5,
+      "link": "https://brakemanscanner.org/docs/warning_types/unscoped_find/",
+      "code": "Car.find(params[:car_id])",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "SellsController",
+        "method": "new"
+      },
+      "user_input": "params[:car_id]",
       "confidence": "Weak",
       "cwe_id": [
         285
@@ -116,6 +116,6 @@
       "note": ""
     }
   ],
-  "updated": "2023-02-04 12:51:38 +0100",
+  "updated": "2023-02-04 13:57:16 +0100",
   "brakeman_version": "5.4.0"
 }
