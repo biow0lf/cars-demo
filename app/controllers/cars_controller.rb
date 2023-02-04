@@ -22,6 +22,8 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     @people = Person.pluck(:name, :id)
+    @person = Person.find_by(id: params.dig(:car, :person_id))
+    @car.ownerships.build(person: @person)
 
     if @car.save
       redirect_to car_path(@car), notice: t(".successful")
@@ -54,6 +56,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:model, :make, :color, :mileage, :for_sale, :person_id)
+    params.require(:car).permit(:model, :make, :color, :mileage, :for_sale)
   end
 end

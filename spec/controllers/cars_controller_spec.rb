@@ -72,10 +72,30 @@ describe CarsController do
 
     before { expect(Person).to receive(:pluck).with(:name, :id) }
 
+    let(:person) { instance_double(Person) }
+
+    before do
+      #
+      # @person = Person.find_by(id: params.dig(:car, :person_id))
+      #
+      expect(Person).to receive(:find_by).with(id: "2").and_return(person)
+    end
+
+    before do
+      #
+      # @car.ownerships.build(person: @person)
+      #
+      expect(car).to receive(:ownerships) do
+        double.tap do |a|
+          expect(a).to receive(:build).with(person: person)
+        end
+      end
+    end
+
     context "when car valid" do
       before { expect(car).to receive(:save).and_return(true) }
 
-      before { post :create, params: {car: {model: "Model", make: "Make", color: "pink", mileage: "999", for_sale: "1"}} }
+      before { post :create, params: {car: {model: "Model", make: "Make", color: "pink", mileage: "999", for_sale: "1", person_id: "2"}} }
 
       it { should respond_with(:found) }
 
@@ -87,7 +107,7 @@ describe CarsController do
     context "when car not valid" do
       before { expect(car).to receive(:save).and_return(false) }
 
-      before { post :create, params: {car: {model: "Model", make: "Make", color: "pink", mileage: "999", for_sale: "1"}} }
+      before { post :create, params: {car: {model: "Model", make: "Make", color: "pink", mileage: "999", for_sale: "1", person_id: "2"}} }
 
       it { should respond_with(:unprocessable_entity) }
 
@@ -191,13 +211,13 @@ describe CarsController do
   describe "#car_params" do
     before do
       #
-      # params.require(:car).permit(:model, :make, :color, :mileage, :for_sale, :person_id)
+      # params.require(:car).permit(:model, :make, :color, :mileage, :for_sale)
       #
       expect(subject).to receive(:params) do
         double.tap do |a|
           expect(a).to receive(:require).with(:car) do
             double.tap do |b|
-              expect(b).to receive(:permit).with(:model, :make, :color, :mileage, :for_sale, :person_id)
+              expect(b).to receive(:permit).with(:model, :make, :color, :mileage, :for_sale)
             end
           end
         end

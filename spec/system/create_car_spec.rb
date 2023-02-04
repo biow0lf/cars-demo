@@ -8,6 +8,8 @@ describe "Create car features" do
 
     expect(Car.count).to eq(0)
 
+    expect(Ownership.count).to eq(0)
+
     visit new_car_path
 
     fill_in "Car make", with: "Tesla"
@@ -39,6 +41,10 @@ describe "Create car features" do
     expect(Car.first.for_sale).to eq(true)
 
     expect(Car.first.person_id).to eq(person.id)
+
+    expect(Ownership.first.car).to eq(Car.first)
+
+    expect(Ownership.first.person).to eq(person)
   end
 
   it "should show errors" do
