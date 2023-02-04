@@ -1,0 +1,23 @@
+<%= form_with(model: ownership, url: car_sell_path(car)) do |f| %>
+  <% if ownership.errors.any? %>
+    <div class="alert alert-danger">
+      <h4 class="alert-heading">
+        <%= pluralize(ownership.errors.count, "error") %> prohibited this person from being saved:
+      </h4>
+      <ul class="mb-0">
+        <% ownership.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= f.label :person_id, "Car owner", class: "form-label text-primary" %>
+    <%= f.select :person_id, people, {selected: ownership.person_id, include_blank: true}, {class: "form-select"} %>
+  </div>
+
+  <div class="text-center">
+    <%= f.submit "Sell car", class: "btn btn-primary" %>
+  </div>
+<% end %>

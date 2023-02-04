@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :cars do
     resources :car_ownerships_history, only: :index
+    resource :sell, only: [:new, :create]
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

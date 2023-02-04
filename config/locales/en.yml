@@ -45,3 +45,6 @@ en:
       successful: "Car was successfully updated."
     destroy:
       successful: "Car was successfully destroyed."
+  sells:
+    create:
+      successful: "Car was successfully sold."
