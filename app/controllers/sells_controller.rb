@@ -3,6 +3,7 @@
 class SellsController < ApplicationController
   def show
     @car = Car.find(params[:car_id])
+    @people = Person.pluck(:name, :id)
   end
 
   def create
