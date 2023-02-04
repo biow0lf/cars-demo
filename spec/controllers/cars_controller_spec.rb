@@ -59,19 +59,6 @@ describe CarsController do
   end
 
   describe "#create" do
-    let(:car) { instance_double(Car, to_param: "1") }
-
-    before do
-      #
-      # Car.new(car_params) # => car
-      #
-      expect(Car).to receive(:new)
-        .with(ActionController::Parameters.new(model: "Model", make: "Make", color: "pink", mileage: "999", for_sale: "1").permit!)
-        .and_return(car)
-    end
-
-    before { expect(Person).to receive(:pluck).with(:name, :id) }
-
     let(:person) { instance_double(Person) }
 
     before do
@@ -80,6 +67,26 @@ describe CarsController do
       #
       expect(Person).to receive(:find_by).with(id: "2").and_return(person)
     end
+
+    let(:car) { instance_double(Car, to_param: "1") }
+
+    before do
+      #
+      # Car.new(car_params) # => car
+      #
+      expect(Car).to receive(:new)
+        .with(ActionController::Parameters.new(
+          model: "Model",
+          make: "Make",
+          color: "pink",
+          mileage: "999",
+          for_sale: "1"
+        )
+        .permit!.merge(owner: person))
+        .and_return(car)
+    end
+
+    before { expect(Person).to receive(:pluck).with(:name, :id) }
 
     before do
       #

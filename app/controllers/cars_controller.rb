@@ -20,9 +20,9 @@ class CarsController < ApplicationController
   end
 
   def create
-    @car = Car.new(car_params)
-    @people = Person.pluck(:name, :id)
     @person = Person.find_by(id: params.dig(:car, :person_id))
+    @car = Car.new(car_params.merge(owner: @person))
+    @people = Person.pluck(:name, :id)
     @car.ownerships.build(person: @person)
 
     if @car.save
