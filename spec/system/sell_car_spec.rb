@@ -9,5 +9,7 @@ describe "Sell car features" do
     visit new_car_sell_path(car)
 
     # TODO: check sell button
+
+    # "Car was successfully sold."
   end
 end
