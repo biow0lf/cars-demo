@@ -2,6 +2,7 @@
 
 class SellsController < ApplicationController
   def show
+    @car = Car.find(params[:car_id])
   end
 
   def create
