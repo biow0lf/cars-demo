@@ -37,10 +37,12 @@
     <%= f.check_box :for_sale, class: "form-check-input" %>
   </div>
 
-  <div class="mb-3">
-    <%= f.label :person_id, "Car owner", class: "form-label text-primary" %>
-    <%= f.select :person_id, people, {selected: car.person_id, include_blank: true}, {class: "form-select"} %>
-  </div>
+  <% if car.new_record? %>
+    <div class="mb-3">
+      <%= f.label :person_id, "Car owner", class: "form-label text-primary" %>
+      <%= f.select :person_id, people, {selected: car.person_id, include_blank: true}, {class: "form-select"} %>
+    </div>
+  <% end %>
 
   <div class="text-center">
     <%= f.submit class: "btn btn-primary" %>
