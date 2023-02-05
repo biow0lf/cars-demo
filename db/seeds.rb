@@ -10,23 +10,18 @@
 
 require "progress_bar"
 
+bar = ProgressBar.new(100)
+
 100.times do
   person = FactoryBot.create(:person)
+
   FactoryBot.create(:car, owner: person)
+
+  bar.increment!
 end
 
 Person.find_each do |person|
   Car.find_each do |car|
     FactoryBot.create(:ownership, person: person, car: car)
   end
-end
-
-bar = ProgressBar.new(1_000)
-
-1_000.times do
-  person = FactoryBot.create(:person)
-
-  100.times { FactoryBot.create(:car, owner: person) }
-
-  bar.increment!
 end
