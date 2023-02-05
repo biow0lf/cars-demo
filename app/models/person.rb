@@ -9,5 +9,9 @@ class Person < ApplicationRecord
   validates :email, presence: true
   validates :phone, presence: true
   validates :email, format: /\A[^@\s]+@[^@\s]+\z/
-  validates :email, uniqueness: {case_sensitive: false}
+  validates :email, uniqueness: true
+
+  before_validation do
+    self.email = email&.downcase
+  end
 end

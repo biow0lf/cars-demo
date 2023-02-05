@@ -23,5 +23,11 @@ describe Person do
 
   it { should_not allow_value("@").for(:email) }
 
-  it { should validate_uniqueness_of(:email).case_insensitive }
+  it { should validate_uniqueness_of(:email).ignoring_case_sensitivity }
+
+  it "should downcase email on before save" do
+    person = create(:person, email: "ME@EXAMPLE.COM")
+
+    expect(person.email).to eq("me@example.com")
+  end
 end
