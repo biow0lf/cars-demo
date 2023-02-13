@@ -40,7 +40,7 @@ group :development, :test do
   gem "rubocop", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
-  gem "standard", "1.22.1", require: false
+  gem "standard", "1.24.3", require: false
   gem "fasterer", require: false
   gem "brakeman", require: false
 end
